@@ -1,0 +1,3 @@
+Sample Candidate
+Data Analyst with 1 year of experience using Python, SQL, Excel and Power BI.
+Education: MCA. Worked on reports and data visualization projects.
