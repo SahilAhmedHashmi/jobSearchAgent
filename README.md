@@ -40,7 +40,7 @@ After collecting the current user's answers, run:
 python -B main.py prepare --resume "D:\Private\resume.pdf" --output-dir "D:\JobSearchResults" --roles "Data Analyst,Reporting Analyst" --location India --employment-type full-time --work-mode any --relocate yes --days 30 --result-limit 50
 ```
 
-The command emits a **resume-free plan to stdout**. Hold it in memory; do not redirect it to a file. Optional flags: `--salary-min`, `--max-tasks` (default 160, covering eight roles across all sources), `--no-ipo`. A terminal user can run `python -B main.py` to answer the intake prompts; this prepares a plan but cannot invoke an agent's private search tool.
+The command emits a **resume-free plan to stdout**. Hold it in memory; do not redirect it to a file. Optional flags: `--salary-min`, `--max-tasks` (default 209, covering eight roles across all sources; derived from the source registry), `--no-ipo`. A terminal user can run `python -B main.py` to answer the intake prompts; this prepares a plan but cannot invoke an agent's private search tool.
 
 Execute the plan using the agent's built-in search/open tools. Preserve individual listing URLs and posting-date evidence according to AGENTS.md. Keep the result batch in memory. Feed this envelope through stdin:
 
@@ -58,6 +58,20 @@ The importer reads the original resume into memory for ranking. It exports `repo
 ## Search coverage
 
 Workday, Greenhouse, Lever, Ashby, Workable, SmartRecruiters, iCIMS, Jobvite, employer sites, TopStartups, LinkedIn, Indeed, Naukri, Wellfound and Foundit. IPOPlatform supplies company leads only; IPO activity is not proof of hiring.
+
+Additional GCC discovery resources (official job pages checked October 2026):
+
+| Resource | Coverage / official discovery page |
+| --- | --- |
+| Bayt | [Middle East job search](https://www.bayt.com/en/international/jobs/search/) |
+| Naukrigulf | [UAE, Saudi Arabia, Qatar, Oman, Kuwait and Bahrain](https://www.naukrigulf.com/jobs-by-location) |
+| GulfTalent | [Regional job board](https://www.gulftalent.com/) |
+| GulfJobs | [All six GCC countries](https://www.gulfjobs.com/jobs-by-location) |
+| foundit Gulf | [Gulf job board, formerly Monster Gulf](https://www.founditgulf.com/) |
+| Qatar Living | [Qatar job listings](https://www.qatarliving.com/en/jobs) |
+| Dubizzle | [UAE classifieds job section](https://dubai.dubizzle.com/jobs/) |
+
+These are discovery resources, not reportable individual listings. Search tasks use only the locations selected in the current intake; adding a source does not select GCC countries or change any intake question/default. Regional boards can return locations outside the selection, so validate each listing's location. Broad domain searches accommodate country subdomains and localized listing paths. For classifieds, confirm that each result is an actual job advertisement. Open individual listings and retain the existing date, salary and application-link evidence requirements. Access can vary by listing; record blocked pages in source health rather than bypassing restrictions.
 
 No paid search API, scraping, browser automation, account login or application submission. Blocked and unavailable sources are reported honestly. Search crawl ages never count as posting dates. Unknown job details stay unknown. Match scores are provisional relevance, not eligibility certification or hiring probability.
 

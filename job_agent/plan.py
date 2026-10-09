@@ -11,11 +11,19 @@ SITES = {
     "indeed_india": "in.indeed.com/viewjob", "indeed": "indeed.com/viewjob",
     "naukri": "naukri.com/job-listings", "wellfound": "wellfound.com/jobs",
     "foundit": "foundit.in/job", "company": None,
+    # Broad domains preserve country/subdomain and localized listing paths.
+    "bayt": "bayt.com", "naukrigulf": "naukrigulf.com",
+    "gulftalent": "gulftalent.com", "gulfjobs": "gulfjobs.com",
+    "foundit_gulf": "founditgulf.com", "qatar_living": "qatarliving.com",
+    "dubizzle": "dubizzle.com",
 }
+
+# Cover eight selected roles on every source, open web, and one IPO lead task.
+DEFAULT_MAX_TASKS = 8 * (len(SITES) + 1) + 1
 
 
 def make_plan(profile: dict, roles: list[str], locations: list[str], days: int = 7,
-              include_ipo: bool = True, max_tasks: int = 60,
+              include_ipo: bool = True, max_tasks: int = DEFAULT_MAX_TASKS,
               employment_types: list[str] | None = None, work_modes: list[str] | None = None,
               salary_min: float | None = None, result_limit: int | None = 20) -> dict:
     if not roles or days < 1 or days > 31 or max_tasks < 1:

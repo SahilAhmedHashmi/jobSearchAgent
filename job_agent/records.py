@@ -9,7 +9,9 @@ from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 TRACKING = {"utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid", "gclid"}
 JOB_HOSTS = ("myworkdayjobs.com", "workdayjobs.com", "greenhouse.io", "lever.co",
              "ashbyhq.com", "workable.com", "smartrecruiters.com", "icims.com",
-             "jobvite.com", "linkedin.com", "indeed.com", "naukri.com", "foundit.in", "wellfound.com")
+             "jobvite.com", "linkedin.com", "indeed.com", "naukri.com", "foundit.in", "wellfound.com",
+             "bayt.com", "naukrigulf.com", "gulftalent.com", "gulfjobs.com",
+             "founditgulf.com", "qatarliving.com", "dubizzle.com")
 JOB_TERMS = re.compile(r"\b(job|jobs|career|careers|vacancy|opening|position|apply|requisition)\b", re.I)
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 

@@ -4,7 +4,7 @@ import json
 import sys
 from datetime import datetime, timezone
 
-from .plan import make_plan
+from .plan import DEFAULT_MAX_TASKS, make_plan
 from .privacy import external_path, output_directory
 from .ranking import rank
 from .records import validate_batch
@@ -26,7 +26,7 @@ def parse_args(argv=None):
     for name in ("location", "employment-type", "work-mode"):
         prep.add_argument("--" + name, action="append")
     prep.add_argument("--days", type=int)
-    prep.add_argument("--max-tasks", type=int, default=160)
+    prep.add_argument("--max-tasks", type=int, default=DEFAULT_MAX_TASKS)
     prep.add_argument("--no-ipo", action="store_true")
     prep.add_argument("--salary-min", type=float)
     prep.add_argument("--result-limit", type=int)
